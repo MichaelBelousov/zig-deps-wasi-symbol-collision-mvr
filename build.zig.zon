@@ -24,39 +24,13 @@
     // internet connectivity.
     .dependencies = .{
         .@"binaryen-zig" = .{
-            .path = "../binaryen-zig",
+            .url = "https://github.com/MichaelBelousov/binaryen-zig/archive/7ae386348c28d80b7c8db18d18e64eb14a7ba4e4.zip",
+            .hash = "12200b1104cadb8e9298362b9e8f3545688670c028e2a1b92ddcaa6812760863e50d",
         },
         .dvui = .{
-            .path = "../dvui",
+            .url = "https://github.com/MichaelBelousov/dvui/archive/b9945b4f703fd8d48c5b2dbda8227a41cdec1974.zip",
+            .hash = "122018c6375309e30875f736de210fe209ac37021227b69961056c8658398accc772",
         },
-        // See `zig fetch --save <url>` for a command-line interface for adding dependencies.
-        //.example = .{
-        //    // When updating this field to a new URL, be sure to delete the corresponding
-        //    // `hash`, otherwise you are communicating that you expect to find the old hash at
-        //    // the new URL.
-        //    .url = "https://example.com/foo.tar.gz",
-        //
-        //    // This is computed from the file contents of the directory of files that is
-        //    // obtained after fetching `url` and applying the inclusion rules given by
-        //    // `paths`.
-        //    //
-        //    // This field is the source of truth; packages do not come from a `url`; they
-        //    // come from a `hash`. `url` is just one of many possible mirrors for how to
-        //    // obtain a package matching this `hash`.
-        //    //
-        //    // Uses the [multihash](https://multiformats.io/multihash/) format.
-        //    .hash = "...",
-        //
-        //    // When this is provided, the package is found in a directory relative to the
-        //    // build root. In this case the package's hash is irrelevant and therefore not
-        //    // computed. This field and `url` are mutually exclusive.
-        //    .path = "foo",
-
-        //    // When this is set to `true`, a package is declared to be lazily
-        //    // fetched. This makes the dependency only get fetched if it is
-        //    // actually used.
-        //    .lazy = false,
-        //},
     },
 
     // Specifies the set of files and directories that are included in this package.
