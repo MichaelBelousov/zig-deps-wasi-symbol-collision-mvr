@@ -20,7 +20,15 @@ pub fn main() !void {
 export fn app_init(platform_ptr: [*]const u8, platform_len: usize) i32 {
     _ = platform_ptr;
     _ = platform_len;
+    return 0;
 }
+
+export fn app_deinit() void {}
+export fn app_update() void {}
+export fn add_event() void {}
+export fn arena_u8() void {}
+export fn gpa_u8() void {}
+export fn gpa_free() void {}
 
 test "simple test" {
     var list = std.ArrayList(i32).init(std.testing.allocator);
