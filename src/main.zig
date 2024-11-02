@@ -1,5 +1,7 @@
 const std = @import("std");
 const binaryen = @import("binaryen");
+const WebBackend = @import("WebBackend");
+const dvui = @import("dvui");
 
 pub fn main() !void {
     // Prints to stderr (it's a shortcut based on `std.io.getStdErr()`)
@@ -15,6 +17,7 @@ pub fn main() !void {
     try stdout.print("Run `zig build test` to run the tests.\n", .{});
 
     try bw.flush(); // don't forget to flush!
+
 }
 
 export fn app_init(platform_ptr: [*]const u8, platform_len: usize) i32 {
@@ -24,11 +27,9 @@ export fn app_init(platform_ptr: [*]const u8, platform_len: usize) i32 {
 }
 
 export fn app_deinit() void {}
-export fn app_update() void {}
-export fn add_event() void {}
-export fn arena_u8() void {}
-export fn gpa_u8() void {}
-export fn gpa_free() void {}
+export fn app_update() void {
+    _ = dvui.FPS();
+}
 
 test "simple test" {
     var list = std.ArrayList(i32).init(std.testing.allocator);
